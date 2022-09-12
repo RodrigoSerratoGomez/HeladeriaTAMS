@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using HeladeriaTAMS.Models;
 
 namespace HeladeriaTAMS.Data;
 
@@ -9,4 +10,7 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+
+    public DbSet<HeladeriaTAMS.Models.Contacto> DataContactos { get; set; }
+    public DbSet<HeladeriaTAMS.Models.Producto> DataProducto { get; set; }
 }
