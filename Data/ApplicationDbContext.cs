@@ -12,5 +12,5 @@ public class ApplicationDbContext : IdentityDbContext
     }
 
     public DbSet<HeladeriaTAMS.Models.Contacto> DataContactos { get; set; }
-    public DbSet<HeladeriaTAMS.Models.Producto> DataProducto { get; set; }
+    public DbSet<HeladeriaTAMS.Models.Producto> DataProductos { get; set; }
 }

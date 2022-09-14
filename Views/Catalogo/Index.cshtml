@@ -1,0 +1,52 @@
+@model IEnumerable<HeladeriaTAMS.Models.Producto>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+</head>
+
+<body>
+    @{
+        ViewData["Title"] = "Catalogo";
+    }
+
+    <h1>@ViewData["Title"]</h1>
+
+    <div class="container">
+        
+        <h1>@ViewData["Message"]</h1>
+        <div class="row">
+            <div class="col">
+                <div id="products" class="mb-3">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-sm-4">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="card-img-actions">
+                                            <img class="img-responsive" width="150" height="150"
+                                            src="/images/@item.ImageName" alt="@item.ImageName" />
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                                        <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
+                                        <a class="btn btn-primary" asp-action="Add" asp-route-id="@item.Id">Add</a>
+                                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

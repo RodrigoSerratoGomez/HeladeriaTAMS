@@ -27,6 +27,7 @@ namespace HeladeriaTAMS.Controllers
 
         public IActionResult Index()
         {
+            
             return View();
         }
 
